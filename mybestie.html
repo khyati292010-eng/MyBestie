@@ -1,0 +1,145 @@
+<!-- Copy THIS exact code and save as index.html next to your files -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Vaibhavi 💕</title>
+    <style>
+        body {
+            background-color: #FFF0F5; /* Baby Pink */
+            color: #5C4033;
+            font-family: sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 40px auto;
+            border: 2px solid #FFB6C1;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        button {
+            background: #FF69B4;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        h1 { color: #FF69B4; }
+        .highlight { color: #FF69B4; font-weight: bold; }
+        
+        #heart-container {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none; z-index: 99;
+        }
+        .heart {
+            position: absolute;
+            animation: fall 4s linear forwards;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-20px); opacity: 1; }
+            100% { transform: translateY(102vh); opacity: 0; }
+        }
+
+        /* Video and Image Styles to make them look uniform */
+        img, video {
+            width: 100%; 
+            border-radius: 12px; 
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background-color: #fcfcfc;
+        }
+        .caption {
+            font-style: italic;
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="heart-container"></div>
+
+    <!-- BOX 1: WELCOME BUTTON -->
+    <div class="card" id="welcomeBox">
+        <h1>Hi Vaibhavi! 💕</h1>
+        <p>Click below to activate the magic falling hearts...</p>
+        <button id="magicBtn">Tap to Begin</button>
+    </div>
+
+    <!-- BOX 2: SIGMA BOND MESSAGE -->
+    <div class="card">
+        <p style="font-size: 18px; line-height: 1.6;">
+            Dearest Vaibhavi,<br><br>
+            Come what may, our connection is completely unbreakable. Our bond will always remain incredibly cute, deeply special, and remarkably strong—<span class="highlight">just like a Sigma Bond!</span> 🔬⚛️<br><br>
+            Nothing can tear us apart. We are locked in for life!
+        </p>
+    </div>
+
+    <!-- BOX 3: PICS & VIDEOS GALLERY -->
+    <div class="card">
+        <h2 style="color: #FF69B4; margin-bottom: 25px;">Our Core Memories 📸</h2>
+        
+        <!-- FIRST PHOTO -->
+        <img src="img1.jpeg" alt="Our Memory 1">
+        <div class="caption">Look at us! One of my favorite days ever 🥰</div>
+        
+        <!-- FIRST VIDEO CLIP -->
+        <video controls playsinline>
+            <source src="vid11111.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="caption">A tiny snippet of our chaotic, amazing energy 🎬</div>
+
+        <!-- SECOND PHOTO -->
+        <img src="img2.jpeg" alt="Our Memory 2">
+        <div class="caption">Laughing together is my favorite therapy ✨</div>
+
+        <!-- NEW THIRD PHOTO -->
+        <img src="img3.jpeg" alt="Our Memory 3">
+        <div class="caption">Another unforgettable snapshot of us 💖</div>
+
+        <!-- NEW FOURTH PHOTO -->
+        <img src="img4.jpeg" alt="Our Memory 4">
+        <div class="caption">Forever making the best memories together 🌸</div>
+    </div>
+
+    <!-- BOX 4: FINAL FLASHCARD -->
+    <div class="card" style="border: 3px dashed #FF69B4; background: #FFF5F7;">
+        <h3 style="color: #FF69B4; margin-bottom:15px;">We were bestmates, we are, and we always will be. 💖</h3>
+        <p style="text-align: left; line-height: 1.6;">
+            Finding a true friend who matches your level of crazy and stays by your side through every single high and low is rare. I am incredibly lucky to have found that anchor in you.
+        </p>
+        <p style="text-align: right; font-weight: bold; color: #FF69B4; margin-top:20px;">~ Forever Yours, Khyati 👭</p>
+    </div>
+
+    <script>
+        document.getElementById('magicBtn').addEventListener('click', function() {
+            document.getElementById('welcomeBox').style.display = 'none';
+            
+            setInterval(function() {
+                var heart = document.createElement('div');
+                heart.className = 'heart';
+                var icons = ['🌸', '💗', '🎀', '💕', '✨', '❤️'];
+                heart.innerText = icons[Math.floor(Math.random() * icons.length)];
+                heart.style.left = (Math.random() * 100) + 'vw';
+                heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+                document.getElementById('heart-container').appendChild(heart);
+                
+                setTimeout(function() { heart.remove(); }, 4000);
+            }, 300);
+        });
+    </script>
+
+</body>
+</html>
